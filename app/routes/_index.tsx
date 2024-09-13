@@ -23,6 +23,11 @@ export default function Index(): JSX.Element {
       <NavBar />
       <header className="bg-gradient-to-r from-primary to-secondary text-white h-screen flex items-center">
         <div className="container mx-auto px-6 text-center">
+          <img
+            src="/assets/logo.png"
+            alt="am2 llc logo"
+            className="mx-auto mb-8 w-64"
+          />
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Empowering Your Digital Presence
           </h1>
