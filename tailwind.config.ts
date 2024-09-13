@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
+  content: ["./app/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       fontFamily: {
@@ -16,7 +16,16 @@ export default {
           '"Noto Color Emoji"',
         ],
       },
+      colors: {
+        primary: "#1E3A8A", // Replace with your chosen colors
+        secondary: "#F59E0B",
+        accent: "#10B981",
+      },
     },
   },
-  plugins: [],
+  darkMode: "class", // or 'media'
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("tailwindcss-dark-mode"),
+  ],
 } satisfies Config;
