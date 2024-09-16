@@ -63,7 +63,10 @@ export default function Support() {
         <h2 className="text-2xl font-semibold mb-4">App Information</h2>
         <p className="mb-2">Version: 1.0.0</p>
         <p className="mb-2">Last Updated: September 16, 2023</p>
-        <Link to="/privacy-policy" className="text-blue-600 hover:underline">
+        <Link
+          to="https://www.freeprivacypolicy.com/live/954a0e6c-c2db-4bce-aa84-9500ce83fa5e"
+          className="text-blue-600 hover:underline"
+        >
           Privacy Policy
         </Link>
       </section>
