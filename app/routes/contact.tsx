@@ -27,12 +27,28 @@ export default function Contact(): JSX.Element {
           <h1 className="text-3xl font-bold mb-4 text-center">Contact Us</h1>
           <div className="flex items-center justify-center mb-4">
             <EnvelopeIcon className="h-6 w-6 text-primary mr-2" />
-            <p>
-              Email us at{" "}
-              <a href="mailto:mischke@proton.me">mischke@proton.me</a>
-            </p>
+            Email us at{" "}
+            <a
+              href="mailto:mischke@proton.me"
+              className="mx-2 text-accent hover:underline"
+            >
+              mischke@proton.me
+            </a>
           </div>
-          <form className="space-y-4">
+          <form
+            className="space-y-4"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const name = (document.getElementById("name") as HTMLInputElement)
+                .value;
+              const message = (
+                document.getElementById("message") as HTMLTextAreaElement
+              ).value;
+              window.location.href = `mailto:mischke@proton.me?subject=Contact from ${name}&body=${encodeURIComponent(
+                message
+              )}`;
+            }}
+          >
             <div>
               <label htmlFor="name" className="block text-sm font-medium">
                 Name
@@ -42,17 +58,7 @@ export default function Contact(): JSX.Element {
                 id="name"
                 name="name"
                 className="p-1 mt-1 block w-full text-secondary rounded-md shadow-sm"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="p-1 mt-1 block w-full text-secondary rounded-md shadow-sm"
+                required
               />
             </div>
             <div>
@@ -64,11 +70,12 @@ export default function Contact(): JSX.Element {
                 name="message"
                 rows={4}
                 className="p-1 mt-1 block w-full text-secondary rounded-md shadow-sm"
+                required
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full px-4 py-2 bg-secondary text-white rounded-md hover:bg-green-600"
+              className="w-full px-4 py-2 bg-secondary text-white rounded-md hover:bg-accent"
             >
               Send Message
             </button>
