@@ -5,20 +5,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: [
-          '"Inter"',
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-          '"Noto Color Emoji"',
-        ],
+        sans: ["Inconsolata"],
       },
       colors: {
-        primary: "#1E3A8A", // Replace with your chosen colors
-        secondary: "#F59E0B",
+        primary: "#F0FFF0",
+        secondary: "#696969",
         accent: "#10B981",
       },
     },

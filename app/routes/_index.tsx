@@ -1,7 +1,6 @@
 // app/routes/index.tsx
-import { Link } from "@remix-run/react";
 import NavBar from "~/components/NavBar";
-import Footer from "~/components/Footer";
+import { MetaFunction } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -17,32 +16,50 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+const getRandomColor = () => {
+  return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
+    Math.random() * 256
+  )}, ${Math.floor(Math.random() * 256)})`;
+};
+
+const getRandomGradient = () => {
+  const color1 = getRandomColor();
+  const color2 = getRandomColor();
+  const color3 = getRandomColor();
+  const color4 = getRandomColor();
+  return `linear-gradient(-45deg, ${color1}, ${color2}, ${color3}, ${color4})`;
+};
+
 export default function Index(): JSX.Element {
+  const randomGradient = getRandomGradient();
+
   return (
     <div>
       <NavBar />
-      <header className="bg-gradient-to-r from-primary to-secondary text-white h-screen flex items-center">
-        <div className="container mx-auto px-6 text-center">
-          <img
-            src="/assets/logo.png"
-            alt="am2 llc logo"
-            className="mx-auto mb-8 w-64"
-          />
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            Empowering Your Digital Presence
-          </h1>
-          <p className="text-xl md:text-2xl mb-8">
-            We deliver innovative software solutions tailored to your needs.
-          </p>
-          <Link
-            to="/offerings"
-            className="inline-block bg-white text-primary font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transform hover:-translate-y-1 transition duration-300"
-          >
-            Discover Our Services
-          </Link>
-        </div>
-      </header>
-      <Footer />
+      <div
+        className="h-screen w-screen flex items-center justify-center"
+        style={{
+          backgroundImage: randomGradient,
+          backgroundSize: "400% 400%",
+          animation: "gradientShift 15s ease infinite",
+        }}
+      >
+        <img src="/assets/logo.png" alt="am2 llc logo" className="mb-8 w-64" />
+      </div>
     </div>
   );
+}
+
+const styles = `
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+`;
+
+export function links() {
+  return [
+    { rel: "stylesheet", href: "data:text/css," + encodeURIComponent(styles) },
+  ];
 }

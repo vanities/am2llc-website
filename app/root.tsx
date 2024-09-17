@@ -17,10 +17,6 @@ export const links: LinksFunction = () => [
     crossOrigin: "anonymous",
   },
   { rel: "stylesheet", href: stylesheet },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap",
-  },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
