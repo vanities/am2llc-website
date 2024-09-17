@@ -34,50 +34,41 @@ export default function Contact(): JSX.Element {
           </div>
           <form className="space-y-4">
             <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="name" className="block text-sm font-medium">
                 Name
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                className="p-1 mt-1 block w-full text-secondary rounded-md shadow-sm"
               />
             </div>
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="email" className="block text-sm font-medium">
                 Email
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                className="p-1 mt-1 block w-full text-secondary rounded-md shadow-sm"
               />
             </div>
             <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="message" className="block text-sm font-medium">
                 Message
               </label>
               <textarea
                 id="message"
                 name="message"
                 rows={4}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                className="p-1 mt-1 block w-full text-secondary rounded-md shadow-sm"
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+              className="w-full px-4 py-2 bg-secondary text-white rounded-md hover:bg-green-600"
             >
               Send Message
             </button>

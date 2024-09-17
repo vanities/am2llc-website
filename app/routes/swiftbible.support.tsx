@@ -54,7 +54,13 @@ export default function Support() {
         </p>
         <ul className="list-disc pl-6">
           <li className="mb-2">
-            Email: <a href="mailto:mischke@proton.me">mischke@proton.me</a>
+            Email:{" "}
+            <a
+              href="mailto:mischke@proton.me"
+              className="text-blue-600 hover:text-primary hover:underline transition-colors duration-300"
+            >
+              mischke@proton.me
+            </a>
           </li>
         </ul>
       </section>

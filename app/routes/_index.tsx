@@ -27,7 +27,19 @@ const getRandomGradient = () => {
   const color2 = getRandomColor();
   const color3 = getRandomColor();
   const color4 = getRandomColor();
-  return `linear-gradient(-45deg, ${color1}, ${color2}, ${color3}, ${color4})`;
+  const angle = Math.floor(Math.random() * 360);
+  return `linear-gradient(${angle}deg, ${color1}, ${color2}, ${color3}, ${color4})`;
+};
+
+const getRandomGradients = () => {
+  const gradients = [];
+  for (let i = 0; i < 3; i++) {
+    const color1 = getRandomColor();
+    const color2 = getRandomColor();
+    const angle = Math.floor(Math.random() * 360);
+    gradients.push(`linear-gradient(${angle}deg, ${color1}, ${color2})`);
+  }
+  return gradients.join(", ");
 };
 
 export default function Index(): JSX.Element {
